@@ -25,6 +25,8 @@
 
     <children>
 
+        <!-- Título principal -->
+
         <Label layoutX="45.0"
                layoutY="28.0"
                text="Gestión de usuarios"
@@ -41,7 +43,9 @@
 
             <children>
 
-                <!-- Formulario -->
+                <!-- ================================= -->
+                <!-- FORMULARIO DE REGISTRO             -->
+                <!-- ================================= -->
 
                 <VBox prefHeight="430.0"
                       prefWidth="350.0"
@@ -94,11 +98,21 @@
                                 prefHeight="44.0"
                                 prefWidth="290.0"
                                 styleClass="boton-registrar"/>
+                        
+                        <Button text="Cambiar rol"
+                                onAction="#eventoCambiarRolUsuario"
+                                prefHeight="44.0"
+                                prefWidth="300.0"
+                                styleClass="boton-registrar"/>
 
                     </children>
+
                 </VBox>
 
-                <!-- Tabla -->
+
+                <!-- ================================= -->
+                <!-- TABLA DE USUARIOS                  -->
+                <!-- ================================= -->
 
                 <VBox prefHeight="430.0"
                       prefWidth="635.0"
@@ -112,6 +126,9 @@
 
                         <Label text="Listado general de usuarios del sistema."
                                styleClass="subtitulo-tabla"/>
+
+
+                        <!-- Tabla -->
 
                         <TableView fx:id="tblUsuarios"
                                    prefHeight="340.0"
@@ -141,13 +158,32 @@
                                              prefWidth="200.0"/>
 
                             </columns>
+
                         </TableView>
 
+
+                        <!-- Botón para activar o desactivar -->
+
+                        <Button text="Activar / Desactivar usuario"
+                                onAction="#eventoCambiarEstadoUsuario"
+                                prefHeight="44.0"
+                                prefWidth="300.0"
+                                styleClass="boton-registrar"/>
+                        
+                        <Button text="Actualizar usuarios"
+                                 onAction="#eventoActualizarUsuarios"
+                                 prefHeight="44.0"
+                                 prefWidth="300.0"
+                                 styleClass="boton-registrar"/>
+
                     </children>
+
                 </VBox>
 
             </children>
+
         </HBox>
 
     </children>
+
 </AnchorPane>
