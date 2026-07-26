@@ -5,12 +5,15 @@
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane prefHeight="520.0"
-            prefWidth="650.0"
+<AnchorPane prefHeight="600.0"
+            prefWidth="1100.0"
             styleClass="fondo-principal"
             xmlns="http://javafx.com/javafx/21"
             xmlns:fx="http://javafx.com/fxml/1"
@@ -22,59 +25,129 @@
 
     <children>
 
-        <VBox layoutX="105.0"
-              layoutY="55.0"
-              prefWidth="440.0"
-              spacing="14.0"
-              styleClass="tarjeta-formulario">
+        <Label layoutX="45.0"
+               layoutY="28.0"
+               text="Gestión de usuarios"
+               styleClass="titulo-principal"/>
+
+        <Label layoutX="45.0"
+               layoutY="64.0"
+               text="Registra nuevos usuarios y consulta los accesos existentes."
+               styleClass="subtitulo-principal"/>
+
+        <HBox layoutX="45.0"
+              layoutY="110.0"
+              spacing="25.0">
 
             <children>
 
-                <Label text="Registrar usuario"
-                       styleClass="titulo"/>
+                <!-- Formulario -->
 
-                <Label text="Crea un nuevo acceso para el sistema."
-                       styleClass="subtitulo"/>
+                <VBox prefHeight="430.0"
+                      prefWidth="350.0"
+                      spacing="13.0"
+                      styleClass="tarjeta-formulario">
 
-                <Label text="Nombre de usuario"
-                       styleClass="etiqueta"/>
+                    <children>
 
-                <TextField fx:id="txtNuevoUsuario"
-                           promptText="Ejemplo: Carlos"
-                           prefHeight="44.0"
-                           styleClass="campo"/>
+                        <Label text="Registrar usuario"
+                               styleClass="titulo"/>
 
-                <Label text="Contraseña"
-                       styleClass="etiqueta"/>
+                        <Label text="Crea un nuevo acceso para el sistema."
+                               styleClass="subtitulo"/>
 
-                <PasswordField fx:id="txtNuevaPassword"
-                               promptText="Escribe una contraseña"
-                               prefHeight="44.0"
-                               styleClass="campo"/>
+                        <Label text="Nombre de usuario"
+                               styleClass="etiqueta"/>
 
-                <Label text="Rol"
-                       styleClass="etiqueta"/>
+                        <TextField fx:id="txtNuevoUsuario"
+                                   promptText="Ejemplo: Carlos"
+                                   prefHeight="44.0"
+                                   prefWidth="290.0"
+                                   styleClass="campo"/>
 
-                <ComboBox fx:id="cmbRol"
-                          promptText="Selecciona un rol"
-                          prefHeight="44.0"
-                          prefWidth="360.0"
-                          styleClass="combo"/>
+                        <Label text="Contraseña"
+                               styleClass="etiqueta"/>
 
-                <Label fx:id="lblMensajeUsuario"
-                       text=""
-                       wrapText="true"
-                       prefWidth="360.0"
-                       styleClass="mensaje"/>
+                        <PasswordField fx:id="txtNuevaPassword"
+                                       promptText="Escribe una contraseña"
+                                       prefHeight="44.0"
+                                       prefWidth="290.0"
+                                       styleClass="campo"/>
 
-                <Button text="Registrar usuario"
-                        onAction="#eventoRegistrarUsuario"
-                        prefHeight="44.0"
-                        prefWidth="360.0"
-                        styleClass="boton-registrar"/>
+                        <Label text="Rol"
+                               styleClass="etiqueta"/>
+
+                        <ComboBox fx:id="cmbRol"
+                                  promptText="Selecciona un rol"
+                                  prefHeight="44.0"
+                                  prefWidth="290.0"
+                                  styleClass="combo"/>
+
+                        <Label fx:id="lblMensajeUsuario"
+                               text=""
+                               wrapText="true"
+                               prefWidth="290.0"
+                               styleClass="mensaje"/>
+
+                        <Button text="Registrar usuario"
+                                onAction="#eventoRegistrarUsuario"
+                                prefHeight="44.0"
+                                prefWidth="290.0"
+                                styleClass="boton-registrar"/>
+
+                    </children>
+                </VBox>
+
+                <!-- Tabla -->
+
+                <VBox prefHeight="430.0"
+                      prefWidth="635.0"
+                      spacing="12.0"
+                      styleClass="tarjeta-tabla">
+
+                    <children>
+
+                        <Label text="Usuarios registrados"
+                               styleClass="titulo-tabla"/>
+
+                        <Label text="Listado general de usuarios del sistema."
+                               styleClass="subtitulo-tabla"/>
+
+                        <TableView fx:id="tblUsuarios"
+                                   prefHeight="340.0"
+                                   prefWidth="585.0"
+                                   styleClass="tabla-usuarios">
+
+                            <columns>
+
+                                <TableColumn fx:id="colId"
+                                             text="ID"
+                                             prefWidth="55.0"/>
+
+                                <TableColumn fx:id="colUsername"
+                                             text="Usuario"
+                                             prefWidth="135.0"/>
+
+                                <TableColumn fx:id="colRol"
+                                             text="Rol"
+                                             prefWidth="105.0"/>
+
+                                <TableColumn fx:id="colActivo"
+                                             text="Activo"
+                                             prefWidth="85.0"/>
+
+                                <TableColumn fx:id="colFechaCreacion"
+                                             text="Fecha de creación"
+                                             prefWidth="200.0"/>
+
+                            </columns>
+                        </TableView>
+
+                    </children>
+                </VBox>
 
             </children>
-        </VBox>
+        </HBox>
 
     </children>
 </AnchorPane>

@@ -1,20 +1,30 @@
 package org.ds.model;
 
-//POJO: Nombre, atributos de clase, constructores, metodos(get y set) otros...
-//encapsulación, herencia, polimorfismo, abstraction
+import java.sql.Timestamp;
+
 public class Usuario {
-    //id, nombre, rol
+
     private int id;
     private String username;
     private String rol;
+    private boolean activo;
+    private Timestamp fechaCreacion;
 
     public Usuario() {
     }
 
-    public Usuario(int id, String username, String rol) {
+    public Usuario(
+            int id,
+            String username,
+            String rol,
+            boolean activo,
+            Timestamp fechaCreacion
+    ) {
         this.id = id;
         this.username = username;
         this.rol = rol;
+        this.activo = activo;
+        this.fechaCreacion = fechaCreacion;
     }
 
     public int getId() {
@@ -40,7 +50,20 @@ public class Usuario {
     public void setRol(String rol) {
         this.rol = rol;
     }
-    
-    
+
+    public boolean isActivo() {
+        return activo;
+    }
+
+    public void setActivo(boolean activo) {
+        this.activo = activo;
+    }
+
+    public Timestamp getFechaCreacion() {
+        return fechaCreacion;
+    }
+
+    public void setFechaCreacion(Timestamp fechaCreacion) {
+        this.fechaCreacion = fechaCreacion;
+    }
 }
-    

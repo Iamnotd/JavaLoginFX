@@ -4,6 +4,8 @@ import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 import org.ds.model.Usuario;
 import org.ds.util.Conexion;
 
@@ -100,5 +102,65 @@ public class UsuarioDAO {
 
             return false;
         }
+    }
+
+    // Listar usuarios
+    public List<Usuario> listarUsuarios() {
+
+        List<Usuario> usuarios =
+                new ArrayList<>();
+
+        String sql =
+                "{call sp_listarusuarios()}";
+
+        try (
+            Connection conexion =
+                    Conexion.getInstancia().conectar();
+
+            CallableStatement consulta =
+                    conexion.prepareCall(sql);
+
+            ResultSet tablaResultado =
+                    consulta.executeQuery()
+        ) {
+
+            while (tablaResultado.next()) {
+
+                Usuario usuario = new Usuario();
+
+                usuario.setId(
+                        tablaResultado.getInt("id")
+                );
+
+                usuario.setUsername(
+                        tablaResultado.getString("username")
+                );
+
+                usuario.setRol(
+                        tablaResultado.getString("rol")
+                );
+
+                usuario.setActivo(
+                        tablaResultado.getBoolean("activo")
+                );
+
+                usuario.setFechaCreacion(
+                        tablaResultado.getTimestamp(
+                                "fecha_creacion"
+                        )
+                );
+
+                usuarios.add(usuario);
+            }
+
+        } catch (SQLException e) {
+
+            System.err.println(
+                    "Error al listar usuarios: "
+                    + e.getMessage()
+            );
+        }
+
+        return usuarios;
     }
 }
