@@ -1,7 +1,129 @@
-/*
- * Empty Stylesheet file.
- */
+.fondo-principal {
+    -fx-background-color: #f4f7fb;
+    -fx-font-family: "Segoe UI";
+}
 
-.mainFxmlClass {
+/* Panel izquierdo */
 
+.panel-informativo {
+    -fx-background-color: linear-gradient(
+        to bottom right,
+        #14213d,
+        #1d3564
+    );
+
+    -fx-padding: 70 55 45 55;
+}
+
+.logo {
+    -fx-text-fill: white;
+    -fx-font-size: 30px;
+    -fx-font-weight: bold;
+    -fx-padding: 0 0 45 0;
+}
+
+.titulo-panel {
+    -fx-text-fill: white;
+    -fx-font-size: 29px;
+    -fx-font-weight: bold;
+}
+
+.descripcion-panel {
+    -fx-text-fill: #ccd8eb;
+    -fx-font-size: 15px;
+    -fx-line-spacing: 5px;
+}
+
+.lista-roles {
+    -fx-padding: 30 0 0 0;
+}
+
+.item-rol {
+    -fx-text-fill: #e7eef9;
+    -fx-font-size: 14px;
+}
+
+.texto-inferior {
+    -fx-text-fill: #91a7ca;
+    -fx-font-size: 12px;
+    -fx-translate-y: 95;
+}
+
+/* Formulario */
+
+.contenedor-formulario {
+    -fx-background-color: white;
+    -fx-padding: 100 90 70 90;
+}
+
+.titulo-login {
+    -fx-text-fill: #18233b;
+    -fx-font-size: 30px;
+    -fx-font-weight: bold;
+}
+
+.subtitulo-login {
+    -fx-text-fill: #7a8598;
+    -fx-font-size: 14px;
+    -fx-padding: 0 0 20 0;
+}
+
+.etiqueta {
+    -fx-text-fill: #3d4960;
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+    -fx-padding: 5 0 0 0;
+}
+
+.campo {
+    -fx-background-color: #f7f9fc;
+    -fx-border-color: #dce3ee;
+    -fx-border-width: 1px;
+    -fx-border-radius: 9px;
+    -fx-background-radius: 9px;
+    -fx-padding: 0 15 0 15;
+    -fx-font-size: 14px;
+    -fx-text-fill: #263249;
+    -fx-prompt-text-fill: #9ba6b7;
+}
+
+.campo:hover {
+    -fx-border-color: #aebbd0;
+}
+
+.campo:focused {
+    -fx-background-color: white;
+    -fx-border-color: #3157a4;
+    -fx-border-width: 2px;
+}
+
+.boton-ingresar {
+    -fx-background-color: #3157a4;
+    -fx-background-radius: 9px;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-cursor: hand;
+    -fx-padding: 12 20 12 20;
+}
+
+.boton-ingresar:hover {
+    -fx-background-color: #26498e;
+}
+
+.boton-ingresar:pressed {
+    -fx-background-color: #1e3c77;
+}
+
+.mensaje {
+    -fx-text-fill: #c43d3d;
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+    -fx-min-height: 22px;
+}
+
+.nota {
+    -fx-text-fill: #929cac;
+    -fx-font-size: 11px;
+    -fx-padding: 12 0 0 0;
 }

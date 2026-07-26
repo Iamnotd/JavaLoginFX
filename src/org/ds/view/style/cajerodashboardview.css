@@ -1,3 +1,166 @@
-.mainFxmlClass {
-    -fx-background-color: #f4f4f4;
+.fondo-principal {
+    -fx-background-color: #fff8ef;
+    -fx-font-family: "Segoe UI";
+}
+
+/* Menú lateral */
+
+.menu-lateral {
+    -fx-background-color: #4b2e16;
+    -fx-padding: 35 20 25 20;
+}
+
+.logo {
+    -fx-text-fill: white;
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-padding: 0 0 5 0;
+}
+
+.rol {
+    -fx-text-fill: #e7bd8d;
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+    -fx-padding: 0 0 25 0;
+}
+
+.boton-menu,
+.boton-menu-activo,
+.boton-salir {
+    -fx-background-radius: 8;
+    -fx-cursor: hand;
+    -fx-font-size: 14px;
+    -fx-alignment: CENTER_LEFT;
+    -fx-padding: 12 16 12 16;
+}
+
+.boton-menu {
+    -fx-background-color: transparent;
+    -fx-text-fill: #f8e7d2;
+}
+
+.boton-menu:hover {
+    -fx-background-color: #6d4423;
+}
+
+.boton-menu-activo {
+    -fx-background-color: #d4842e;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+
+.boton-salir {
+    -fx-background-color: transparent;
+    -fx-text-fill: #ffb0a8;
+    -fx-translate-y: 170;
+}
+
+.boton-salir:hover {
+    -fx-background-color: #6b3730;
+}
+
+/* Encabezado */
+
+.encabezado {
+    -fx-background-color: white;
+    -fx-padding: 22 40 20 40;
+    -fx-effect: dropshadow(
+        gaussian,
+        rgba(75, 46, 22, 0.08),
+        12,
+        0,
+        0,
+        3
+    );
+}
+
+.titulo {
+    -fx-text-fill: #4b2e16;
+    -fx-font-size: 23px;
+    -fx-font-weight: bold;
+}
+
+.bienvenida {
+    -fx-text-fill: #8a6a4b;
+    -fx-font-size: 14px;
+}
+
+/* Contenido */
+
+.subtitulo {
+    -fx-text-fill: #4b2e16;
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+}
+
+.tarjeta {
+    -fx-background-color: white;
+    -fx-background-radius: 14;
+    -fx-padding: 20;
+    -fx-effect: dropshadow(
+        gaussian,
+        rgba(75, 46, 22, 0.10),
+        15,
+        0,
+        0,
+        4
+    );
+}
+
+.tarjeta-titulo {
+    -fx-text-fill: #806247;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+}
+
+.tarjeta-numero {
+    -fx-text-fill: #d4842e;
+    -fx-font-size: 34px;
+    -fx-font-weight: bold;
+    -fx-padding: 8 0 2 0;
+}
+
+.tarjeta-numero-pequeno {
+    -fx-text-fill: #d4842e;
+    -fx-font-size: 26px;
+    -fx-font-weight: bold;
+    -fx-padding: 11 0 5 0;
+}
+
+.tarjeta-estado {
+    -fx-text-fill: #2f8a53;
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-padding: 13 0 7 0;
+}
+
+.tarjeta-descripcion {
+    -fx-text-fill: #a18d79;
+    -fx-font-size: 12px;
+}
+
+.panel-informacion {
+    -fx-background-color: white;
+    -fx-background-radius: 14;
+    -fx-padding: 25;
+    -fx-effect: dropshadow(
+        gaussian,
+        rgba(75, 46, 22, 0.08),
+        15,
+        0,
+        0,
+        4
+    );
+}
+
+.panel-titulo {
+    -fx-text-fill: #4b2e16;
+    -fx-font-size: 17px;
+    -fx-font-weight: bold;
+    -fx-padding: 0 0 15 0;
+}
+
+.panel-texto {
+    -fx-text-fill: #947d68;
+    -fx-font-size: 14px;
 }

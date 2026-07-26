@@ -40,20 +40,26 @@ public class InicioSesionController implements Initializable {
         lblMensaje.setText("");
     }
 
+    @FXML
     public void eventoInicioSesion(ActionEvent evento) {
 
-        String usuario = txtUsuario.getText();
+        String usuario = txtUsuario.getText().trim();
         String password = txtPassword.getText();
 
-        // Verificación si los datos están vacíos
+        // Color de error por defecto
+        lblMensaje.setStyle("-fx-text-fill: #c43d3d;");
+
+        // Verificar si los campos están vacíos
         if (usuario.isEmpty() || password.isEmpty()) {
+
             lblMensaje.setText(
                     "Por favor, complete todos sus datos."
             );
+
             return;
         }
 
-        // Convertir la contraseña a hash
+        // Convertir la contraseña a SHA-256
         String passwordHash =
                 SecurityUtil.hashSHA256(password);
 
@@ -67,10 +73,12 @@ public class InicioSesionController implements Initializable {
         if (usuarioIniciado != null) {
 
             lblMensaje.setStyle(
-                    "-fx-background-color: #60682e;"
+                    "-fx-text-fill: #2f8a53;"
             );
 
-            lblMensaje.setText("Inicio correcto");
+            lblMensaje.setText(
+                    "Inicio correcto"
+            );
 
             abrirDashboard(usuarioIniciado);
 
@@ -115,12 +123,13 @@ public class InicioSesionController implements Initializable {
 
             default:
                 lblMensaje.setStyle(
-                        "-fx-text-fill: red;"
+                        "-fx-text-fill: #c43d3d;"
                 );
 
                 lblMensaje.setText(
                         "El rol del usuario no es válido."
                 );
+
                 return;
         }
 
@@ -132,24 +141,27 @@ public class InicioSesionController implements Initializable {
             if (archivoFXML == null) {
 
                 lblMensaje.setStyle(
-                        "-fx-text-fill: red;"
+                        "-fx-text-fill: #c43d3d;"
                 );
 
                 lblMensaje.setText(
                         "No se encontró la vista: "
                         + rutaFXML
                 );
+
                 return;
             }
 
             FXMLLoader cargadorFXML =
                     new FXMLLoader(archivoFXML);
 
-            Parent raiz = cargadorFXML.load();
+            Parent raiz =
+                    cargadorFXML.load();
 
             switch (usuario.getRol().toLowerCase()) {
 
                 case "admin":
+
                     AdminDashboardController adminController =
                             cargadorFXML.getController();
 
@@ -157,6 +169,7 @@ public class InicioSesionController implements Initializable {
                     break;
 
                 case "empleado":
+
                     EmpleadoDashboardController empleadoController =
                             cargadorFXML.getController();
 
@@ -164,14 +177,19 @@ public class InicioSesionController implements Initializable {
                     break;
 
                 case "cajero":
+
                     CajeroDashboardController cajeroController =
                             cargadorFXML.getController();
 
                     cajeroController.iniciarUsuario(usuario);
                     break;
+
+                default:
+                    return;
             }
 
-            Stage escenario = new Stage();
+            Stage escenario =
+                    new Stage();
 
             escenario.setScene(
                     new Scene(raiz)
@@ -181,6 +199,8 @@ public class InicioSesionController implements Initializable {
                     tituloDashboard
             );
 
+            escenario.setResizable(false);
+            escenario.centerOnScreen();
             escenario.show();
 
             Stage escenaActual =
@@ -202,7 +222,7 @@ public class InicioSesionController implements Initializable {
             e.printStackTrace();
 
             lblMensaje.setStyle(
-                    "-fx-text-fill: red;"
+                    "-fx-text-fill: #c43d3d;"
             );
 
             lblMensaje.setText(

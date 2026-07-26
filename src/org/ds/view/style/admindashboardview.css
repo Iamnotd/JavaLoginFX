@@ -1,7 +1,152 @@
-/*
- * Empty Stylesheet file.
- */
+.fondo-principal {
+    -fx-background-color: #f4f7fb;
+    -fx-font-family: "Segoe UI";
+}
 
-.mainFxmlClass {
+/* Menú lateral */
 
+.menu-lateral {
+    -fx-background-color: #14213d;
+    -fx-padding: 35 20 25 20;
+}
+
+.logo {
+    -fx-text-fill: white;
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-padding: 0 0 5 0;
+}
+
+.rol {
+    -fx-text-fill: #9aabc8;
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+    -fx-padding: 0 0 25 0;
+}
+
+.boton-menu,
+.boton-menu-activo,
+.boton-salir {
+    -fx-background-radius: 8;
+    -fx-cursor: hand;
+    -fx-font-size: 14px;
+    -fx-alignment: CENTER_LEFT;
+    -fx-padding: 12 16 12 16;
+}
+
+.boton-menu {
+    -fx-background-color: transparent;
+    -fx-text-fill: #dbe4f5;
+}
+
+.boton-menu:hover {
+    -fx-background-color: #23365f;
+}
+
+.boton-menu-activo {
+    -fx-background-color: #3157a4;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+
+.boton-salir {
+    -fx-background-color: transparent;
+    -fx-text-fill: #ff9b9b;
+    -fx-translate-y: 170;
+}
+
+.boton-salir:hover {
+    -fx-background-color: #472b3a;
+}
+
+/* Encabezado */
+
+.encabezado {
+    -fx-background-color: white;
+    -fx-padding: 22 40 20 40;
+    -fx-effect: dropshadow(
+        gaussian,
+        rgba(20, 33, 61, 0.08),
+        12,
+        0,
+        0,
+        3
+    );
+}
+
+.titulo {
+    -fx-text-fill: #18233b;
+    -fx-font-size: 23px;
+    -fx-font-weight: bold;
+}
+
+.bienvenida {
+    -fx-text-fill: #69758a;
+    -fx-font-size: 14px;
+}
+
+/* Contenido */
+
+.subtitulo {
+    -fx-text-fill: #18233b;
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+}
+
+.tarjeta {
+    -fx-background-color: white;
+    -fx-background-radius: 14;
+    -fx-padding: 20;
+    -fx-effect: dropshadow(
+        gaussian,
+        rgba(20, 33, 61, 0.10),
+        15,
+        0,
+        0,
+        4
+    );
+}
+
+.tarjeta-titulo {
+    -fx-text-fill: #536079;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+}
+
+.tarjeta-numero {
+    -fx-text-fill: #3157a4;
+    -fx-font-size: 34px;
+    -fx-font-weight: bold;
+    -fx-padding: 8 0 2 0;
+}
+
+.tarjeta-descripcion {
+    -fx-text-fill: #8b96a8;
+    -fx-font-size: 12px;
+}
+
+.panel-informacion {
+    -fx-background-color: white;
+    -fx-background-radius: 14;
+    -fx-padding: 25;
+    -fx-effect: dropshadow(
+        gaussian,
+        rgba(20, 33, 61, 0.08),
+        15,
+        0,
+        0,
+        4
+    );
+}
+
+.panel-titulo {
+    -fx-text-fill: #18233b;
+    -fx-font-size: 17px;
+    -fx-font-weight: bold;
+    -fx-padding: 0 0 15 0;
+}
+
+.panel-texto {
+    -fx-text-fill: #778298;
+    -fx-font-size: 14px;
 }
