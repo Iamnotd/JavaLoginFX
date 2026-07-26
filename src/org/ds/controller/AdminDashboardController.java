@@ -30,6 +30,7 @@ public class AdminDashboardController implements Initializable {
     }
 
     public void IniciarUsuario(Usuario usuario) {
+
         this.usuarioActual = usuario;
 
         lblBienvenida.setText(
@@ -39,28 +40,99 @@ public class AdminDashboardController implements Initializable {
     }
 
     @FXML
+    private void eventoAbrirUsuarios(ActionEvent evento) {
+
+        try {
+
+            URL archivoFXML = getClass().getResource(
+                    "/org/ds/view/UsuarioView.fxml"
+            );
+
+            if (archivoFXML == null) {
+
+                System.err.println(
+                        "No se encontró la vista UsuarioView.fxml"
+                );
+
+                return;
+            }
+
+            FXMLLoader cargadorFXML =
+                    new FXMLLoader(archivoFXML);
+
+            Parent raiz = cargadorFXML.load();
+
+            Stage escenarioUsuarios = new Stage();
+
+            escenarioUsuarios.setScene(
+                    new Scene(raiz)
+            );
+
+            escenarioUsuarios.setTitle(
+                    "Gestión de usuarios"
+            );
+
+            escenarioUsuarios.setResizable(false);
+            escenarioUsuarios.centerOnScreen();
+            escenarioUsuarios.show();
+
+        } catch (IOException e) {
+
+            System.err.println(
+                    "Error al abrir la vista de usuarios: "
+                    + e.getMessage()
+            );
+
+            e.printStackTrace();
+        }
+    }
+
+    @FXML
     private void eventoSalir(ActionEvent evento) {
 
         try {
-            FXMLLoader cargadorFXML = new FXMLLoader(
-                    getClass().getResource(
-                            "/org/ds/view/InicioSesionView.fxml"
-                    )
+
+            URL archivoFXML = getClass().getResource(
+                    "/org/ds/view/InicioSesionView.fxml"
             );
+
+            if (archivoFXML == null) {
+
+                System.err.println(
+                        "No se encontró InicioSesionView.fxml"
+                );
+
+                return;
+            }
+
+            FXMLLoader cargadorFXML =
+                    new FXMLLoader(archivoFXML);
 
             Parent raiz = cargadorFXML.load();
 
             Stage escenarioInicio = new Stage();
-            escenarioInicio.setScene(new Scene(raiz));
-            escenarioInicio.setTitle("Inicio de sesión");
+
+            escenarioInicio.setScene(
+                    new Scene(raiz)
+            );
+
+            escenarioInicio.setTitle(
+                    "Inicio de sesión"
+            );
+
+            escenarioInicio.setResizable(false);
+            escenarioInicio.centerOnScreen();
             escenarioInicio.show();
 
             Stage escenarioActual =
-                    (Stage) btnSalir.getScene().getWindow();
+                    (Stage) btnSalir
+                            .getScene()
+                            .getWindow();
 
             escenarioActual.close();
 
         } catch (IOException e) {
+
             System.err.println(
                     "Error al regresar al inicio de sesión: "
                     + e.getMessage()
@@ -68,5 +140,9 @@ public class AdminDashboardController implements Initializable {
 
             e.printStackTrace();
         }
+    }
+
+    public Usuario getUsuarioActual() {
+        return usuarioActual;
     }
 }

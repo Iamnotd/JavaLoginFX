@@ -1,0 +1,75 @@
+.fondo-principal {
+    -fx-background-color: #f4f7fb;
+    -fx-font-family: "Segoe UI";
+}
+
+.tarjeta-formulario {
+    -fx-background-color: white;
+    -fx-background-radius: 16;
+    -fx-padding: 35 40 35 40;
+
+    -fx-effect: dropshadow(
+        gaussian,
+        rgba(20, 33, 61, 0.12),
+        18,
+        0,
+        0,
+        5
+    );
+}
+
+.titulo {
+    -fx-text-fill: #18233b;
+    -fx-font-size: 26px;
+    -fx-font-weight: bold;
+}
+
+.subtitulo {
+    -fx-text-fill: #7a8598;
+    -fx-font-size: 13px;
+    -fx-padding: 0 0 12 0;
+}
+
+.etiqueta {
+    -fx-text-fill: #3d4960;
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+}
+
+.campo,
+.combo {
+    -fx-background-color: #f7f9fc;
+    -fx-border-color: #dce3ee;
+    -fx-border-width: 1px;
+    -fx-border-radius: 9px;
+    -fx-background-radius: 9px;
+    -fx-padding: 0 13 0 13;
+    -fx-font-size: 14px;
+}
+
+.campo:focused,
+.combo:focused {
+    -fx-background-color: white;
+    -fx-border-color: #3157a4;
+    -fx-border-width: 2px;
+}
+
+.boton-registrar {
+    -fx-background-color: #3157a4;
+    -fx-background-radius: 9px;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-cursor: hand;
+}
+
+.boton-registrar:hover {
+    -fx-background-color: #26498e;
+}
+
+.mensaje {
+    -fx-text-fill: #c43d3d;
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+    -fx-min-height: 22px;
+}

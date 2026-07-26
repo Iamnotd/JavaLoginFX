@@ -40,6 +40,7 @@
 
                 <Button text="Usuarios"
                         prefWidth="190.0"
+                        onAction="#eventoAbrirUsuarios"
                         styleClass="boton-menu"/>
 
                 <Button text="Empleados"
